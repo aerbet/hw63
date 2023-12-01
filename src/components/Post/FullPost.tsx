@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Button } from 'reactstrap';
-import axios from '../../axios-instances';
+import axios from '../../axiosApi.ts';
 
 interface Post {
   id: number;
