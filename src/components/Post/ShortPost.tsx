@@ -12,7 +12,7 @@ const ShortPost: React.FC<ShortPostProps> = ({ title, description, readClicked }
     <Card body>
       <CardTitle>{title}</CardTitle>
       <CardText>{description}</CardText>
-      <Button onClick={readClicked}>Read</Button>
+      <Button onClick={readClicked}>Read More</Button>
     </Card>
   );
 };

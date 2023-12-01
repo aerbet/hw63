@@ -20,7 +20,7 @@ const Header: React.FC = () => {
 
   return (
     <header>
-      <Navbar color="dark" dark expand="md">
+      <Navbar className="fixed-top" color="dark" dark expand="md">
         <Container>
           <NavbarBrand href="/">Blog</NavbarBrand>
           <NavbarToggler onClick={toggle} />

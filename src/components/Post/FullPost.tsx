@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Button } from 'reactstrap';
-import axios from '../../axiosApi.ts';
+import axiosApi from '../../axiosApi.ts';
 
 interface Post {
   id: number;
@@ -15,7 +15,7 @@ const FullPost: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`posts/${id}.json`).then(response => {
+    axiosApi.get(`posts/${id}.json`).then(response => {
       setPost(response.data);
     });
   }, [id]);
@@ -26,7 +26,7 @@ const FullPost: React.FC = () => {
 
   const deleteHandler = (postId: number) => {
     if (window.confirm('You really want to remove this post?')) {
-      axios.delete(`posts/${postId}.json`).then(() => {
+      axiosApi.delete(`posts/${postId}.json`).then(() => {
         alert('Пост удален !');
         navigate('/');
       });

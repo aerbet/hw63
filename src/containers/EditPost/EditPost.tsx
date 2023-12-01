@@ -10,20 +10,32 @@ const EditPost: React.FC = () => {
 
   useEffect(() => {
     if (id) {
-      axiosApi.get(`posts/${id}.json`).then((response) => {
+      axiosApi.get(`posts.json`).then((response) => {
         setPost(response.data);
       });
     }
   }, [id]);
 
   const editPost = (postData: any) => {
-    axiosApi.put(`posts/${id}.json`, postData).then(() => {
+    if (!post) {
+      alert('Post not found.');
+      return;
+    }
+
+    if (!postData.title.trim() || !postData.description.trim()) {
+      alert('Please fill in both title and description.');
+      return;
+    }
+
+    const updatedPostData = { ...postData, id };
+
+    axiosApi.put(`posts/${id}.json`, updatedPostData).then(() => {
       alert('Changes have been made');
       navigate('/posts');
     });
   };
 
-  const postInfo = { ...(post || {}), id }; // Use an empty object as a default value
+  const postInfo = { ...(post || {}), id };
 
   return (
     <>

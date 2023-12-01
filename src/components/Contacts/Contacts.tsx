@@ -3,7 +3,7 @@ import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 const Contact: React.FC = () => {
   return (
-    <Form>
+    <Form className="forma">
       <Row form>
         <Col md={6}>
           <FormGroup>

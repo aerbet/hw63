@@ -8,5 +8,26 @@
 }
 
 .navbar {
-  width: 1920px;
+  margin: 0 0 10px 0;
+}
+
+.card {
+  margin: 50px 0 30px 0;
+  width: 600px;
+}
+
+.forma {
+  margin-top: 40px;
+}
+
+.btn {
+  margin: 0 10px;
+}
+
+.post-form {
+  width: 600px;
+}
+
+.topbar {
+  margin-top: 120px;
 }

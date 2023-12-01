@@ -29,7 +29,7 @@ const PostForm: React.FC<PostFormProps> = ({ data, submit }) => {
   };
 
   return (
-    <Form onSubmit={submitHandler}>
+    <Form className="post-form" onSubmit={submitHandler}>
       <FormGroup>
         <Label for="title">Title</Label>
         <Input
@@ -48,7 +48,6 @@ const PostForm: React.FC<PostFormProps> = ({ data, submit }) => {
           name="description"
           id="description"
           placeholder="Text"
-          style={{ height: '300px' }}
           value={formData.description}
           onChange={valueChanged}
         />
