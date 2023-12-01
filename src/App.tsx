@@ -1,17 +1,23 @@
-import {Route, Switch} from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Container } from 'reactstrap';
 
-import FullPost from "./components/Post/FullPost";
-import PostForm from "./PostForm/PostForm";
-import './App.css'
+import FullPost from './components/Post/FullPost';
 
-function App() {
+import './App.css';
 
-
+const App: React.FC = () => {
   return (
-    <>
-
-    </>
-  )
-}
+    <Router>
+      <div className="App">
+        <Container>
+          <Routes>
+            <Route path="/posts/:id" element={<FullPost />} />
+          </Routes>
+        </Container>
+      </div>
+    </Router>
+  );
+};
 
 export default App
